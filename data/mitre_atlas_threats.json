@@ -1,0 +1,26 @@
+[
+  {
+    "id": "AML.T0051",
+    "technique": "LLM Indirect Prompt Injection",
+    "tactic": "Initial Access / Execution",
+    "description": "El adversario inserta texto malicioso en recursos de datos externos (archivos, páginas web, bases de datos vectoriales) anticipando que un agente LLM procesará dicho contenido como parte de su contexto RAG o navegación.",
+    "detection": "Analizar la disonancia semántica entre el objetivo original del usuario y las instrucciones emergentes en el contexto recuperado.",
+    "controls": ["Contención de contexto en tags aislados", "Token entropy analysis", "Inspección de anomalías en embeddings"]
+  },
+  {
+    "id": "AML.T0054",
+    "technique": "LLM Jailbreak via Multi-turn or Linguistic Obfuscation",
+    "tactic": "Defense Evasion",
+    "description": "Uso de escenarios hipotéticos, codificaciones no estándar o ingeniería social compleja a lo largo de múltiples turnos para saltar los filtros de seguridad del modelo.",
+    "detection": "Monitor de alineación continua y scoring de toxicidad/intención en cada turno conversacional.",
+    "controls": ["Filtros estáticos de patrones maliciosos conocidos", "Modelo clasificador de intención adverso", "Reset de sesión ante alertas repetidas"]
+  },
+  {
+    "id": "AML.T0055",
+    "technique": "Insecure Tool & MCP Invocation",
+    "tactic": "Privilege Escalation / Lateral Movement",
+    "description": "El adversario utiliza un agente para invocar herramientas del sistema o endpoints MCP con argumentos maliciosos no saneados (inyección de comandos de shell, path traversal).",
+    "detection": "Registro y validación de esquemas JSON en llamadas a herramientas; alertas por discrepancia en firma de funciones.",
+    "controls": ["Restricción de herramientas a llamadas de solo lectura (Read-Only tier)", "Autorización explícita de usuario antes de ejecución", "Validación estricta de tipos de parámetros"]
+  }
+]

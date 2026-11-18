@@ -1,0 +1,26 @@
+[
+  {
+    "principle": "Principle of Least Privilege in MCP (PoLP)",
+    "rule_code": "MCP-SEC-01",
+    "description": "Un servidor MCP solo debe exponer aquellas herramientas estrictamente requeridas para el objetivo de negocio. Toda herramienta que modifique estado o ejecute comandos debe requerir confirmación explícita (Human-in-the-Loop).",
+    "severity": "CRITICAL"
+  },
+  {
+    "principle": "JSON Schema Strict Validation",
+    "rule_code": "MCP-SEC-02",
+    "description": "Los argumentos enviados al servidor MCP deben ser verificados rigurosamente contra el esquema JSON declarado antes de invocar la lógica de backend. Argumentos inesperados deben ser rechazados.",
+    "severity": "HIGH"
+  },
+  {
+    "principle": "Tool Output Sanitization & Indirect Injection Defense",
+    "rule_code": "MCP-SEC-03",
+    "description": "La salida retornada por una herramienta de servidor MCP hacia el agente debe considerarse no confiable y someterse a filtrado defensivo para prevenir inyecciones indirectas que secuestren la toma de decisiones del agente en turnos posteriores.",
+    "severity": "HIGH"
+  },
+  {
+    "principle": "Audit Logging and Traceability",
+    "rule_code": "MCP-SEC-04",
+    "description": "Toda llamada a una herramienta MCP debe registrarse con identificador de sesión, huella de tiempo, nombre del agente invocador, parámetros sanitizados y resultado devuelto.",
+    "severity": "MEDIUM"
+  }
+]
